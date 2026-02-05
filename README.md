@@ -84,7 +84,7 @@ This section will list available skills as they are added.
 
 | Skill | Description | When to use | Status |
 | --- | --- | --- | --- |
-| (coming soon) | (coming soon) | (coming soon) | experimental |
+| [webapp-testing](skills/webapp-testing/SKILL.md) | Toolkit for interacting with and testing local web applications using Playwright. | Web UI Testing, E2E Tests | Stable |
 
 > Tip: To add your skill to this catalog, update this table in your PR.
 

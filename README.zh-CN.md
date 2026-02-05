@@ -2,7 +2,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Validate Skills](https://github.com/trae-ai/trae-skills/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/trae-ai/trae-skills/actions/workflows/validate-skills.yml)
 
 TRAE 社区维护的 Agent Skills 仓库。在 TRAE 中，技能（Skill）通过 `SKILL.md` 文件进行定义和管理。一个技能可以理解为提供给智能体的一套"能力手册"，并可按需携带脚本、模板、示例与相关资源。执行任务前，智能体会先扫描所有技能的简要描述，仅当判断任务与某个技能高度相关时，才会加载该技能的详细内容，从而减少 Token 消耗并避免无关信息干扰。
 

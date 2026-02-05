@@ -44,10 +44,14 @@ This repository is intended to follow a simple, discoverable layout:
 ```
 skills/
   <skill-name>/
-    SKILL.md
-    (optional) scripts/
-    (optional) examples/
-    (optional) assets/
+    SKILL.md               # (Mandatory) Core instructions for the agent
+    (optional) examples/   # Input/output examples
+      input.md
+      output.md
+    (optional) templates/  # Reusable templates
+      component.tsx
+    (optional) resources/  # Reference files, scripts, or assets
+      style-guide.md
 ```
 
 ## Skill format (SKILL.md)
@@ -56,21 +60,23 @@ Each skill must include a `SKILL.md` with YAML frontmatter:
 
 ```md
 ---
-name: webapp-testing
-description: Create and run browser-based tests with Playwright for web apps.
+name: skill-name
+description: Brief description of the skill's function and usage scenario.
 ---
 
-# Web App Testing
+# Skill Name
 
-## What I do
-- Generate Playwright tests for key user flows
-- Provide commands to run tests locally
+## Description
+Describe what this skill does.
 
-## When to use
-Use this skill when you need reliable end-to-end browser tests.
+## Usage Scenario
+Describe the conditions that trigger this skill.
 
-## Examples
-- “Write Playwright tests for signup and password reset.”
+## Instructions
+Clear, step-by-step instructions telling the agent exactly what to do.
+
+## Examples (Optional)
+Input/output examples showing the expected result.
 ```
 
 Guidelines for good metadata:
@@ -82,7 +88,7 @@ Guidelines for good metadata:
 
 This section will list available skills as they are added.
 
-| Skill | Description | When to use | Status |
+| Skill | Description | Usage Scenario | Status |
 | --- | --- | --- | --- |
 | [webapp-testing](skills/webapp-testing/SKILL.md) | Toolkit for interacting with and testing local web applications using Playwright. | Web UI Testing, E2E Tests | Stable |
 

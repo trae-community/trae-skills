@@ -1,1 +1,121 @@
-# trae-skills
+# TRAE Agent Skills
+
+Community-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, scenario-specific “capability manual” defined by a `SKILL.md` file, optionally packaged with scripts, templates, examples, and other resources. The agent scans skill descriptions first and only loads full skill content when a task is highly relevant, reducing token usage and avoiding irrelevant context.
+
+[中文说明](./README.zh-CN.md)
+
+## Quickstart
+
+1. Clone this repository.
+2. Put skills into the right location for TRAE:
+   - Project skills: `.trae/skills/<skill-name>/SKILL.md`
+   - Global skills: `~/.trae/skills/<skill-name>/SKILL.md`
+3. Configure/refresh TRAE so it discovers skills from those locations (the exact UI/setting name may vary by TRAE version).
+4. Ask TRAE for a task that matches a skill’s description, for example:
+   - “Use the webapp-testing skill to create Playwright tests for the login flow.”
+   - “Use the release-notes skill to draft release notes from recent PR titles.”
+
+## What are Agent Skills?
+
+Agent Skills are folders of instructions, scripts, and resources that an AI agent can discover and load dynamically to perform specialized tasks in a repeatable way. A typical skill is a directory with a `SKILL.md` file that contains:
+
+- YAML frontmatter metadata (especially `name` and `description`)
+- A Markdown body with steps, guidelines, and examples
+
+This pattern keeps the agent’s core rules lightweight while making SOP-style workflows portable and shareable.
+
+## Skills vs. other features in TRAE
+
+- Skills vs. Rules: rules are fully injected into every chat and continuously occupy context; skills are loaded on-demand only when called.
+- Skills vs. MCP servers: skills describe how TRAE should accomplish a task; MCP servers provide tools that TRAE can call. For example, a Playwright MCP server provides browser automation tools, while a testing skill defines test structure, conventions, and execution workflow.
+
+## Skill types in TRAE
+
+- Global skills: reusable across projects (personal/team conventions, general toolchain workflows, long-term output preferences).
+- Project skills: apply only to the current project (project-specific business rules, architecture constraints, project scaffolding/testing workflows).
+
+## Repository layout
+
+This repository is intended to follow a simple, discoverable layout:
+
+```
+skills/
+  <skill-name>/
+    SKILL.md
+    (optional) scripts/
+    (optional) examples/
+    (optional) assets/
+```
+
+## Skill format (SKILL.md)
+
+Each skill must include a `SKILL.md` with YAML frontmatter:
+
+```md
+---
+name: webapp-testing
+description: Create and run browser-based tests with Playwright for web apps.
+---
+
+# Web App Testing
+
+## What I do
+- Generate Playwright tests for key user flows
+- Provide commands to run tests locally
+
+## When to use
+Use this skill when you need reliable end-to-end browser tests.
+
+## Examples
+- “Write Playwright tests for signup and password reset.”
+```
+
+Guidelines for good metadata:
+
+- `name`: lowercase, use hyphens instead of spaces, and keep it stable over time
+- `description`: be specific about what it does and when to use it (this is what helps agents decide to load the skill)
+
+## Skills catalog
+
+This section will list available skills as they are added.
+
+| Skill | Description | When to use | Status |
+| --- | --- | --- | --- |
+| (coming soon) | (coming soon) | (coming soon) | experimental |
+
+## Contributing
+
+PRs are welcome. Please keep skills small, task-focused, and easy to verify.
+
+### Quality bar
+
+- Clear “what/when/how” structure with steps and examples
+- No secrets (API keys, tokens, internal URLs, customer data) in instructions or scripts
+- Commands are copy-pasteable and scoped (avoid destructive defaults)
+- Prefer deterministic outputs (templates, checklists, structured formats)
+
+### Naming conventions
+
+- Directory name must match the skill `name`
+- Use `lowercase-hyphenated` names (no spaces)
+- Avoid ambiguous names like `helpers` or `misc`
+
+### Pull request checklist
+
+- `skills/<skill-name>/SKILL.md` exists and has valid frontmatter (`name`, `description`)
+- Includes at least 1 usage examples
+- References files in the skill directory using relative links (if any)
+- License is compatible with this repository’s LICENSE (or explicitly included per-skill)
+
+## License
+
+See [LICENSE](./LICENSE).
+
+## Disclaimer
+
+Skills in this repository are provided for community/educational use. Always review and test skills in your own environment before relying on them for production or security-sensitive workflows.
+
+## Links
+
+- TRAE website: https://www.trae.ai/
+- TRAE Skills docs: https://docs.trae.ai/ide/skills?_lang=en

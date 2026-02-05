@@ -90,7 +90,7 @@ This section will list available skills as they are added.
 
 | Skill | Description | Usage Scenario | Status |
 | --- | --- | --- | --- |
-| [webapp-testing](skills/webapp-testing/SKILL.md) | Toolkit for interacting with and testing local web applications using Playwright. | Web UI Testing, E2E Tests | Stable |
+| [git-commit-generator](skills/git-commit-generator/SKILL.md) | Generate standardized git commit messages based on code changes (diffs), following Conventional Commits specification. | Git Operations, Code Review | Stable |
 
 > Tip: To add your skill to this catalog, update this table in your PR.
 

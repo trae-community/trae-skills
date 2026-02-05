@@ -84,13 +84,13 @@ description: 简要描述这个技能的功能和使用场景
 - `name`：小写 + 连字符（不要空格），尽量保持长期稳定
 - `description`：同时写清“能做什么”和“什么时候用”（这是智能体选择是否加载的关键）
 
-## 技能列表（Catalog）
+## 技能目录
 
-随着贡献增加，这里会列出当前可用技能。
+本章节将列出可用的技能。
 
-| 技能 | 描述 | 适用场景 | 状态 |
+| 技能 | 描述 | 使用场景 | 状态 |
 | --- | --- | --- | --- |
-| [webapp-testing](skills/webapp-testing/SKILL.md) | 使用 Playwright 测试 Web 应用的工具包。 | Web UI 测试, 端到端测试 | Stable |
+| [git-commit-generator](skills/git-commit-generator/SKILL.md) | 根据代码变更（diffs）生成标准化、符合 Conventional Commits 规范的 git 提交信息。 | Git 操作, 代码评审 | Stable |
 
 > 提示：要把你的技能加入此目录，请在 PR 中更新此表格。
 

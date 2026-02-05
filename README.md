@@ -7,20 +7,6 @@ Community-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, 
 
 [中文说明](./README.zh-CN.md)
 
-## Table of Contents
-
-- [Quickstart](#quickstart)
-- [What are Agent Skills?](#what-are-agent-skills)
-- [Skills vs. other features in TRAE](#skills-vs-other-features-in-trae)
-- [Skill types in TRAE](#skill-types-in-trae)
-- [Repository layout](#repository-layout)
-- [Skill format (SKILL.md)](#skill-format-skillmd)
-- [Skills catalog](#skills-catalog)
-- [Contributing](#contributing)
-- [License](#license)
-- [Disclaimer](#disclaimer)
-- [Links](#links)
-
 ## Quickstart
 
 1. Clone this repository.

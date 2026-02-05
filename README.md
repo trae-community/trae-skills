@@ -2,10 +2,25 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Validate Skills](https://github.com/trae-ai/trae-skills/actions/workflows/validate-skills.yml/badge.svg)](https://github.com/trae-ai/trae-skills/actions/workflows/validate-skills.yml)
 
 Community-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, scenario-specific “capability manual” defined by a `SKILL.md` file, optionally packaged with scripts, templates, examples, and other resources. The agent scans skill descriptions first and only loads full skill content when a task is highly relevant, reducing token usage and avoiding irrelevant context.
 
 [中文说明](./README.zh-CN.md)
+
+## Table of Contents
+
+- [Quickstart](#quickstart)
+- [What are Agent Skills?](#what-are-agent-skills)
+- [Skills vs. other features in TRAE](#skills-vs-other-features-in-trae)
+- [Skill types in TRAE](#skill-types-in-trae)
+- [Repository layout](#repository-layout)
+- [Skill format (SKILL.md)](#skill-format-skillmd)
+- [Skills catalog](#skills-catalog)
+- [Contributing](#contributing)
+- [License](#license)
+- [Disclaimer](#disclaimer)
+- [Links](#links)
 
 ## Quickstart
 
@@ -43,6 +58,8 @@ This repository is intended to follow a simple, discoverable layout:
 
 ```
 skills/
+  _template/               # Template for creating new skills
+    SKILL.md
   <skill-name>/
     SKILL.md               # (Mandatory) Core instructions for the agent
     (optional) examples/   # Input/output examples
@@ -96,27 +113,7 @@ This section will list available skills as they are added.
 
 ## Contributing
 
-PRs are welcome. Please keep skills small, task-focused, and easy to verify.
-
-### Quality bar
-
-- Clear “what/when/how” structure with steps and examples
-- No secrets (API keys, tokens, internal URLs, customer data) in instructions or scripts
-- Commands are copy-pasteable and scoped (avoid destructive defaults)
-- Prefer deterministic outputs (templates, checklists, structured formats)
-
-### Naming conventions
-
-- Directory name must match the skill `name`
-- Use `lowercase-hyphenated` names (no spaces)
-- Avoid ambiguous names like `helpers` or `misc`
-
-### Pull request checklist
-
-- `skills/<skill-name>/SKILL.md` exists and has valid frontmatter (`name`, `description`)
-- Includes at least 1 usage examples
-- References files in the skill directory using relative links (if any)
-- License is compatible with this repository’s LICENSE (or explicitly included per-skill)
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 

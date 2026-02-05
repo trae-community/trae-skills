@@ -1,5 +1,8 @@
 # TRAE Agent Skills
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 Community-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, scenario-specific “capability manual” defined by a `SKILL.md` file, optionally packaged with scripts, templates, examples, and other resources. The agent scans skill descriptions first and only loads full skill content when a task is highly relevant, reducing token usage and avoiding irrelevant context.
 
 [中文说明](./README.zh-CN.md)
@@ -10,7 +13,7 @@ Community-maintained Agent Skills for **TRAE**. In TRAE, a skill is a reusable, 
 2. Put skills into the right location for TRAE:
    - Project skills: `.trae/skills/<skill-name>/SKILL.md`
    - Global skills: `~/.trae/skills/<skill-name>/SKILL.md`
-3. Configure/refresh TRAE so it discovers skills from those locations (the exact UI/setting name may vary by TRAE version).
+3. Refresh TRAE's skill discovery in settings (location varies by TRAE version).
 4. Ask TRAE for a task that matches a skill’s description, for example:
    - “Use the webapp-testing skill to create Playwright tests for the login flow.”
    - “Use the release-notes skill to draft release notes from recent PR titles.”
@@ -82,6 +85,8 @@ This section will list available skills as they are added.
 | Skill | Description | When to use | Status |
 | --- | --- | --- | --- |
 | (coming soon) | (coming soon) | (coming soon) | experimental |
+
+> Tip: To add your skill to this catalog, update this table in your PR.
 
 ## Contributing
 

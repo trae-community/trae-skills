@@ -95,6 +95,7 @@ This section will list available skills as they are added.
 | Skill | Description | Usage Scenario | Status |
 | --- | --- | --- | --- |
 | [git-commit-generator](skills/git-commit-generator/SKILL.md) | Generate standardized git commit messages based on code changes (diffs), following Conventional Commits specification. | Git Operations, Code Review | Stable |
+| [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | Checks Chinese text for incorrect English punctuation marks and supports batch fixing. | Chinese Copy Editing, Punctuation Correction | Stable |
 
 > Tip: To add your skill to this catalog, update this table in your PR.
 

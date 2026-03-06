@@ -112,7 +112,6 @@ Create `utils/request.js` with unified request/response interceptors:
 
 ```javascript
 const config = require('./config.js');
-const api = require('./api.js');
 
 const request = (options) => {
   return new Promise((resolve, reject) => {

@@ -1,5 +1,5 @@
 ---
-name: "wechat-miniprogram"
+name: "wechat-mini-program-development"
 description: "WeChat mini-program development skill with standard project structure, request wrapper, and API management. Invoke when developing WeChat mini-programs or when user asks for mini-program development support."
 ---
 

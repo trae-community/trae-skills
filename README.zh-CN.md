@@ -97,6 +97,7 @@ description: 简要描述这个技能的功能和使用场景
 | --- | --- | --- | --- |
 | [git-commit-generator](skills/git-commit-generator/SKILL.md) | 根据代码变更（diffs）生成标准化、符合 Conventional Commits 规范的 git 提交信息。 | Git 操作, 代码评审 | Stable |
 | [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | 检查中文文案中错误使用的英文标点符号，并支持批量修复。 | 中文文案润色, 标点纠错 | Stable |
+| [wechat-miniprogram](skills/wechat-miniprogram/SKILL.md) | 微信小程序开发专用技能，提供标准项目结构、请求封装和 API 管理。 | 微信小程序开发, 项目脚手架 | Stable |
 
 > 提示：要把你的技能加入此目录，请在 PR 中更新此表格。
 

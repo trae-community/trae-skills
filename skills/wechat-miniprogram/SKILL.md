@@ -97,7 +97,6 @@ Create `utils/request.js` with unified request/response interceptors:
 - Automatically concatenate full request URL (baseUrl + endpoint path)
 - Automatically add unified request headers (Content-Type: application/json)
 - Automatically inject user authentication token
-- Automatically add common parameters
 - Support custom headers, timeout, loading state
 - Let wx.request handle parameter serialization natively
 
@@ -142,7 +141,7 @@ const request = (options) => {
 
         if (statusCode >= 200 && statusCode < 300) {
           if (data.code === 0) {
-            resolve(data.data || {});
+            resolve(data.data !== undefined ? data.data : {});
           } else {
             if (data.code === 401) {
               wx.removeStorageSync('token');
@@ -158,11 +157,17 @@ const request = (options) => {
             reject(data);
           }
         } else {
-          wx.showToast({
-            title: 'Network error',
-            icon: 'none',
-            duration: 2000
-          });
+          if (statusCode === 401) {
+            wx.removeStorageSync('token');
+            wx.removeStorageSync('userInfo');
+            wx.redirectTo({ url: '/pages/login/login' });
+          } else {
+            wx.showToast({
+              title: 'Network error',
+              icon: 'none',
+              duration: 2000
+            });
+          }
           reject(res);
         }
       },
@@ -209,11 +214,3 @@ request({
   wx.setStorageSync('token', data.token);
 });
 ```
-
-## Key Improvements
-
-1. **Language**: English content following repository conventions
-2. **Structure**: Added "Usage Scenario" and "Instructions" sections from template
-3. **Module Syntax**: Uses CommonJS (module.exports/require) for WeChat mini-program compatibility
-4. **GET Requests**: Simplified parameter handling by letting wx.request serialize data natively
-5. **401 Handling**: Removed toast when redirecting to login page for better UX

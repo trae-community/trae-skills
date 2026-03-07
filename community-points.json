@@ -1,4 +1,13 @@
 {
-  "scores": {},
-  "ledger": {}
+  "scores": {
+    "jaguarliuu": 1
+  },
+  "ledger": {
+    "pr:11:merged": {
+      "user": "jaguarliuu",
+      "points": 1,
+      "reason": "PR #11 merged",
+      "at": "2026-03-07T05:58:28.794Z"
+    }
+  }
 }

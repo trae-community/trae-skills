@@ -97,6 +97,7 @@ This section will list available skills as they are added.
 | [daily-trend-writer](skills/daily-trend-writer/SKILL.md) | Automated WeChat Official Account content production pipeline. Daily discovers "small but beautiful" topics like practical tools, community hotspots, tutorials, then generates two high-quality articles: "Mimeng-style" and "technical deep-dive". | Content Creation, WeChat Official Account, Trend Analysis | Stable |
 | [git-commit-generator](skills/git-commit-generator/SKILL.md) | Generate standardized git commit messages based on code changes (diffs), following Conventional Commits specification. | Git Operations, Code Review | Stable |
 | [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | Checks Chinese text for incorrect English punctuation marks and supports batch fixing. | Chinese Copy Editing, Punctuation Correction | Stable |
+| [wechat-mini-program-development](skills/wechat-mini-program-development/SKILL.md) | WeChat mini-program development skill with standard project structure, request wrapper, and API management. | WeChat Mini-Program Development, Project Scaffolding | Stable |
 
 > Tip: To add your skill to this catalog, update this table in your PR.
 

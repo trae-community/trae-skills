@@ -1,0 +1,76 @@
+name: Community Points
+
+on:
+  workflow_dispatch:
+    inputs:
+      manual_user:
+        description: GitHub username to award
+        required: true
+        type: string
+      manual_points:
+        description: Points to add (positive integer)
+        required: false
+        default: "1"
+        type: string
+      manual_reason:
+        description: Reason recorded in ledger
+        required: false
+        default: Manual points adjustment
+        type: string
+      manual_event_key:
+        description: Optional unique key for idempotency
+        required: false
+        type: string
+  pull_request:
+    types:
+      - closed
+  issues:
+    types:
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: read
+  issues: read
+
+concurrency:
+  group: community-points
+  cancel-in-progress: false
+
+jobs:
+  update-points:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Update points file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          POINTS_IGNORE_USERS: github-actions[bot],dependabot[bot]
+        run: |
+          node .github/scripts/update-community-points.js \
+            --event-path "$GITHUB_EVENT_PATH" \
+            --event-name "$GITHUB_EVENT_NAME" \
+            --actor "$GITHUB_ACTOR" \
+            --repository "$GITHUB_REPOSITORY" \
+            --manual-run-id "$GITHUB_RUN_ID" \
+            --output-path "community-points.json" \
+            --leaderboard-path "community-leaderboard.md"
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- community-points.json community-leaderboard.md; then
+            echo "No points update."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add community-points.json community-leaderboard.md
+          git commit -m "chore(points): update community points"
+          git push origin HEAD:${{ github.event.repository.default_branch }}

@@ -146,7 +146,7 @@ const request = (options) => {
             if (data.code === 401) {
               wx.removeStorageSync('token');
               wx.removeStorageSync('userInfo');
-              wx.redirectTo({ url: '/pages/login/login' });
+              wx.reLaunch({ url: '/pages/login/login' });
             } else {
               wx.showToast({
                 title: data.msg || 'Request failed',
@@ -160,7 +160,7 @@ const request = (options) => {
           if (statusCode === 401) {
             wx.removeStorageSync('token');
             wx.removeStorageSync('userInfo');
-            wx.redirectTo({ url: '/pages/login/login' });
+            wx.reLaunch({ url: '/pages/login/login' });
           } else {
             wx.showToast({
               title: 'Network error',

@@ -95,6 +95,7 @@ description: 简要描述这个技能的功能和使用场景
 
 | 技能 | 描述 | 使用场景 | 状态 |
 | --- | --- | --- | --- |
+| [daily-trend-writer](skills/daily-trend-writer/SKILL.md) | 全自动化的公众号内容生产流水线。每日发现实用工具、社区热点、教程经验等"小而美"选题，深挖后输出"咪蒙风格"与"技术干货"两篇高质量公众号文章。 | 内容创作, 公众号运营, 热点分析 | Stable |
 | [git-commit-generator](skills/git-commit-generator/SKILL.md) | 根据代码变更（diffs）生成标准化、符合 Conventional Commits 规范的 git 提交信息。 | Git 操作, 代码评审 | Stable |
 | [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | 检查中文文案中错误使用的英文标点符号，并支持批量修复。 | 中文文案润色, 标点纠错 | Stable |
 | [wechat-mini-program-development](skills/wechat-mini-program-development/SKILL.md) | 微信小程序开发专用技能，提供标准项目结构、请求封装和 API 管理。 | 微信小程序开发, 项目脚手架 | Stable |

@@ -248,6 +248,7 @@ Authorization: Bearer <TOKEN>
 
 - **平台地址**：[https://zopia.ai](https://zopia.ai)
 - **API Token 管理**：[https://zopia.ai/settings/api-tokens](https://zopia.ai/settings/api-tokens)
+- **说明文档**：[Zopia AI Skills 使用指南](https://my.feishu.cn/docx/A8ludb4npoBVfVxha1ZcVd64nLc)
 
 ## 许可证
 

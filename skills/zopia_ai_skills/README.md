@@ -248,6 +248,7 @@ For complete request/response schemas, see [API_REFERENCE.md](./API_REFERENCE.md
 
 - **Platform**: [https://zopia.ai](https://zopia.ai)
 - **API Tokens**: [https://zopia.ai/settings/api-tokens](https://zopia.ai/settings/api-tokens)
+- **Documentation**: [Zopia AI Skills Guide](https://my.feishu.cn/docx/A8ludb4npoBVfVxha1ZcVd64nLc)
 
 ## License
 

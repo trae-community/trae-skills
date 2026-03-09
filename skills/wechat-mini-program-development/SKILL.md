@@ -146,7 +146,7 @@ const request = (options) => {
             if (data.code === 401) {
               wx.removeStorageSync('token');
               wx.removeStorageSync('userInfo');
-              wx.redirectTo({ url: '/pages/login/login' });
+              wx.reLaunch({ url: '/pages/login/login' });
             } else {
               wx.showToast({
                 title: data.msg || 'Request failed',
@@ -160,7 +160,7 @@ const request = (options) => {
           if (statusCode === 401) {
             wx.removeStorageSync('token');
             wx.removeStorageSync('userInfo');
-            wx.redirectTo({ url: '/pages/login/login' });
+            wx.reLaunch({ url: '/pages/login/login' });
           } else {
             wx.showToast({
               title: 'Network error',
@@ -187,13 +187,155 @@ const request = (options) => {
 module.exports = request;
 ```
 
-### 5. Usage Examples
+### 5. Create Utility Functions (utils/util.js)
+
+Create `utils/util.js` with common utility functions:
+
+```javascript
+// Format time
+const formatTime = date => {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
+  return [year, month, day].map(formatNumber).join('/') + ' ' + 
+         [hour, minute, second].map(formatNumber).join(':');
+};
+
+const formatNumber = n => {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+};
+
+// Show loading
+const showLoading = (title = 'Loading...') => {
+  wx.showLoading({ title, mask: true });
+};
+
+// Hide loading
+const hideLoading = () => {
+  wx.hideLoading();
+};
+
+// Show toast
+const showToast = (title, icon = 'none') => {
+  wx.showToast({ title, icon, duration: 2000 });
+};
+
+// Show success
+const showSuccess = (title = 'Success') => {
+  showToast(title, 'success');
+};
+
+// Show confirm dialog
+const showConfirm = (content, title = 'Confirm') => {
+  return new Promise((resolve) => {
+    wx.showModal({
+      title,
+      content,
+      success: (res) => resolve(res.confirm)
+    });
+  });
+};
+
+module.exports = {
+  formatTime,
+  showLoading,
+  hideLoading,
+  showToast,
+  showSuccess,
+  showConfirm
+};
+```
+
+### 6. Setup Global Login Check (app.js)
+
+Create `app.js` with global login status check:
+
+```javascript
+App({
+  onLaunch() {
+    console.log('Mini-program launched');
+    this.checkLoginStatus();
+  },
+  
+  onShow() {
+    console.log('Mini-program shown');
+  },
+  
+  onHide() {
+    console.log('Mini-program hidden');
+  },
+
+  // Check login status on app launch
+  checkLoginStatus() {
+    const token = wx.getStorageSync('token');
+    if (!token) {
+      wx.reLaunch({ url: '/pages/login/login' });
+    }
+  },
+
+  globalData: {
+    userInfo: null
+  }
+});
+```
+
+### 7. Configure TabBar (app.json)
+
+Add tabBar configuration in `app.json`:
+
+```json
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "Mini Program",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#ff6b4a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "Menu"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "Cart"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "Mine"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
+```
+
+### 8. Usage Examples
 
 Show how to use the request wrapper in pages:
 
 ```javascript
 const request = require('../../utils/request.js');
 const api = require('../../utils/api.js');
+const util = require('../../utils/util.js');
 
 // Get user info
 request({
@@ -207,10 +349,23 @@ request({
 request({
   url: api.user.login,
   method: 'POST',
-  data: {
-    code: 'xxx'
-  }
+  data: { code: 'xxx' }
 }).then(data => {
   wx.setStorageSync('token', data.token);
+  util.showSuccess('Login successful');
+});
+
+// Show loading and make request
+util.showLoading('Loading data...');
+request({
+  url: api.goods.list,
+  method: 'GET',
+  showLoading: false  // Disable default loading
+}).then(data => {
+  util.hideLoading();
+  console.log('Goods list:', data);
+}).catch(err => {
+  util.hideLoading();
+  util.showError('Failed to load data');
 });
 ```

@@ -1,5 +1,5 @@
 ---
-name: TraeClawInstall
+name: trae-claw-install
 description: Run a repository-driven OpenClaw deployment workflow with platform routing, setup/start/check, acceptance checks, and unified troubleshooting.
 ---
 

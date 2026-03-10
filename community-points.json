@@ -1,6 +1,7 @@
 {
   "scores": {
-    "jaguarliuu": 1
+    "jaguarliuu": 1,
+    "MasamiYui": 1
   },
   "ledger": {
     "pr:11:merged": {
@@ -8,6 +9,12 @@
       "points": 1,
       "reason": "PR #11 merged",
       "at": "2026-03-07T05:58:28.794Z"
+    },
+    "issue:17:closed": {
+      "user": "MasamiYui",
+      "points": 1,
+      "reason": "Issue #17 closed",
+      "at": "2026-03-10T06:40:07.749Z"
     }
   }
 }

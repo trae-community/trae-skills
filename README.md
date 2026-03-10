@@ -100,6 +100,7 @@ This section will list available skills as they are added.
 | [wechat-mini-program-development](skills/wechat-mini-program-development/SKILL.md) | WeChat mini-program development skill with standard project structure, request wrapper, and API management. | WeChat Mini-Program Development, Project Scaffolding | Stable |
 | [kz-article-deep-analysis](skills/kz-article-deep-analysis/SKILL.md) | Deeply interpret non-academic articles (blogs, essays, commentary) and output a structured analysis report (core issue, thesis, argument map, cognitive gains). | Reading, Article Analysis | Stable |
 | [video-to-keyframes](skills/video-to-keyframes/SKILL.md) | Extracts video frames, detects cuts/segments, selects candidate keyframes, and generates review HTML galleries. | Video Analysis, Keyframe Selection, Storyboard Screening | Stable |
+| [web-design-teroop](skills/web-design-teroop/SKILL.md) | Comprehensive design guidance for new frontend projects, covering style, logos, icons, and animations. | New Project, Web Design, UI/UX, Branding | Stable |
 | [trae-claw-install](skills/trae-claw-install/SKILL.md) | Repository-driven OpenClaw deployment workflow with platform routing, acceptance checks, and unified troubleshooting steps. | OpenClaw Deployment, DevOps Workflow, Troubleshooting | Stable |
 
 

@@ -99,6 +99,7 @@ This section will list available skills as they are added.
 | [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | Checks Chinese text for incorrect English punctuation marks and supports batch fixing. | Chinese Copy Editing, Punctuation Correction | Stable |
 | [wechat-mini-program-development](skills/wechat-mini-program-development/SKILL.md) | WeChat mini-program development skill with standard project structure, request wrapper, and API management. | WeChat Mini-Program Development, Project Scaffolding | Stable |
 | [kz-article-deep-analysis](skills/kz-article-deep-analysis/SKILL.md) | Deeply interpret non-academic articles (blogs, essays, commentary) and output a structured analysis report (core issue, thesis, argument map, cognitive gains). | Reading, Article Analysis | Stable |
+| [openclaw-deploy-assistant](skills/openclaw-deploy-assistant/SKILL.md) | Repository-driven OpenClaw deployment workflow with platform routing, acceptance checks, and unified troubleshooting steps. | OpenClaw Deployment, DevOps Workflow, Troubleshooting | Stable |
 
 
 > Tip: To add your skill to this catalog, update this table in your PR.

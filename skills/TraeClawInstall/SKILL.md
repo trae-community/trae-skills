@@ -1,9 +1,9 @@
 ---
-name: openclaw-deploy-assistant
+name: TraeClawInstall
 description: Run a repository-driven OpenClaw deployment workflow with platform routing, setup/start/check, acceptance checks, and unified troubleshooting.
 ---
 
-# OpenClaw Deploy Assistant
+# TraeClawInstall
 
 ## Description
 This skill executes an end-to-end OpenClaw deployment workflow from a repository that already provides platform scripts and operational documents.

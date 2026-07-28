@@ -102,6 +102,7 @@ description: 简要描述这个技能的功能和使用场景
 | [kz-article-deep-analysis](skills/kz-article-deep-analysis/SKILL.md) | 深度解读非学术类文章（博客、随笔、评论），输出结构化分析报告（核心议题、核心主张、论证拓扑、认知增量）。 | 深度阅读, 文章分析 | Stable |
 | [video-to-keyframes](skills/video-to-keyframes/SKILL.md) | 抽取视频帧、检测转场与分段、筛选候选关键帧，并生成可复筛的 HTML 画廊。 | 视频分析, 关键帧筛选, 分镜初筛 | Stable |
 | [web-design-teroop](skills/web-design-teroop/SKILL.md) | 为新前端项目提供全面的设计指导，涵盖风格、Logo、图标和动画设计。 | 新项目, Web 设计, UI/UX, 品牌设计 | Stable |
+| [cloudbase](skills/cloudbase/SKILL.md) | 在 Trae 中进行腾讯云开发（CloudBase）开发：优先 MCP 工具，覆盖 Web / 微信小程序、登录鉴权、数据库、云函数、云托管、云存储与内置 AI。 | 云开发, CloudBase, Web, 小程序, Serverless | Stable |
 
 > 提示：要把你的技能加入此目录，请在 PR 中更新此表格。
 

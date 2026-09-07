@@ -105,6 +105,7 @@ description: 简要描述这个技能的功能和使用场景
 | [entropy-box-zh](skills/entropy-box-zh/SKILL.md) | 以箱熵（Entropy Box）具身智能全景图与知识编译器为核心，把边界明确的具身智能技术需求转化为候选实现方法与有依据的工程工作流；支持全景定位、能力依赖分析、资产选型与证据核验。 | 具身智能研发, 技术全景分析, 能力分解, 依赖分析, 资产选型, 知识缺口分析 | Stable |
 | [cloudbase](skills/cloudbase/SKILL.md) | 在 Trae 中进行腾讯云开发（CloudBase）开发：优先 MCP 工具，覆盖 Web / 微信小程序、登录鉴权、数据库、云函数、云托管、云存储与内置 AI。 | 云开发, CloudBase, Web, 小程序, Serverless | Stable |
 | [cycle-delivery](skills/cycle-delivery/SKILL.md) | 通过本地 MCP 控制平面进行证据门禁式软件交付：不可变请求、双盲评审、仲裁批准与字节级 Git 交付。需从项目 GitHub Release 安装 trae-cycle 二进制。 | 软件交付, 代码评审, 流程治理, Git | Stable |
+| [docx-diff-comment](skills/docx-diff-comment/SKILL.md) | 对比两份 Word 文档差异，在新版本中对新增功能点添加批注，并生成新增需求人天估算表。 | 文档对比, Word 批注, 需求估算 | Stable |
 
 > 提示：要把你的技能加入此目录，请在 PR 中更新此表格。
 

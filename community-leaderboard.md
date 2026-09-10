@@ -2,7 +2,8 @@
 
 | Rank | User | Points |
 | --- | --- | ---: |
-| 1 | @jaguarliuu | 1 |
-| 2 | @MasamiYui | 1 |
+| 1 | @binggg | 1 |
+| 2 | @jaguarliuu | 1 |
+| 3 | @MasamiYui | 1 |
 
-Updated at: 2026-03-10T06:40:07.975Z
+Updated at: 2026-09-10T08:33:12.171Z

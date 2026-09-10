@@ -1,7 +1,8 @@
 {
   "scores": {
     "jaguarliuu": 1,
-    "MasamiYui": 1
+    "MasamiYui": 1,
+    "binggg": 1
   },
   "ledger": {
     "pr:11:merged": {
@@ -15,6 +16,12 @@
       "points": 1,
       "reason": "Issue #17 closed",
       "at": "2026-03-10T06:40:07.749Z"
+    },
+    "issue:21:resolved-by-pr:885": {
+      "user": "binggg",
+      "points": 1,
+      "reason": "Issue #21 resolved by merged PR #885",
+      "at": "2026-09-10T08:33:12.170Z"
     }
   }
 }

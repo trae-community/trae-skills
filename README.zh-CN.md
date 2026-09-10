@@ -1,12 +1,11 @@
 # TRAE Agent Skills
 
-
 ![TRAE Skills Banner](./assets/image/Skills.gif)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-TRAE 社区维护的 Agent Skills 仓库。在 TRAE 中，技能（Skill）通过 `SKILL.md` 文件进行定义和管理。一个技能可以理解为提供给智能体的一套"能力手册"，并可按需携带脚本、模板、示例与相关资源。执行任务前，智能体会先扫描所有技能的简要描述，仅当判断任务与某个技能高度相关时，才会加载该技能的详细内容，从而减少 Token 消耗并避免无关信息干扰。
+TRAE 社区维护的 Agent Skills 仓库。
 
 [English README](./README.md)
 
@@ -18,8 +17,8 @@ TRAE 社区维护的 Agent Skills 仓库。在 TRAE 中，技能（Skill）通�
    - 全局技能：`~/.trae/skills/<skill-name>/SKILL.md`
 3. 在 TRAE 设置中刷新技能发现（不同版本的 TRAE 入口位置可能略有差异）。
 4. 用自然语言提出与某个技能描述匹配的请求，例如：
-   - "使用 webapp-testing 技能，为登录流程创建 Playwright 的端到端测试。"
-   - "使用 release-notes 技能，根据最近的 PR 标题生成 Release Notes 草稿。"
+   - "使用 git-commit-generator 技能，为当前变更生成提交信息。"
+   - "使用 cn-punctuation-checker 技能，检查这份文档的中文标点。"
 
 ## 什么是 Agent Skills？
 
@@ -59,39 +58,9 @@ skills/
       style-guide.md
 ```
 
-## 技能文件格式（SKILL.md）
-
-每个技能必须包含 `SKILL.md`，并以 YAML frontmatter 开头：
-
-```md
----
-name: 技能名称
-description: 简要描述这个技能的功能和使用场景
----
-
-# 技能名称
-
-## 描述
-描述这个技能的作用。
-
-## 使用场景
-描述触发这个技能的条件。
-
-## 指令
-清晰的分步说明，告诉智能体具体怎么做。
-
-## 示例 (可选)
-输入/输出示例，展示预期效果。
-```
-
-元信息建议：
-
-- `name`：小写 + 连字符（不要空格），尽量保持长期稳定
-- `description`：同时写清“能做什么”和“什么时候用”（这是智能体选择是否加载的关键）
+创建技能时，请使用[技能模板](skills/_template/SKILL.md)，并参阅[贡献指南](CONTRIBUTING.zh-CN.md)。
 
 ## 技能目录
-
-本章节将列出可用的技能。
 
 | 技能 | 描述 | 使用场景 | 状态 |
 | --- | --- | --- | --- |
@@ -107,8 +76,6 @@ description: 简要描述这个技能的功能和使用场景
 | [project-governance](skills/project-governance/SKILL.md) | AI 辅助开发的项目治理工作区——项目协议（规则、权限、自主权等级）、目录索引、错误档案、会话交接、变更日志、稳定版本索引，以及 whitelist/blacklist 参数注册表，附带 scaffold/validate/index/check CLI。 | 项目搭建, AI Agent 接入, 参数版本管理, 项目治理 | Stable |
 | [cycle-delivery](skills/cycle-delivery/SKILL.md) | 通过本地 MCP 控制平面进行证据门禁式软件交付：不可变请求、双盲评审、仲裁批准与字节级 Git 交付。需从项目 GitHub Release 安装 trae-cycle 二进制。 | 软件交付, 代码评审, 流程治理, Git | Stable |
 | [docx-diff-comment](skills/docx-diff-comment/SKILL.md) | 对比两份 Word 文档差异，在新版本中对新增功能点添加批注，并生成新增需求人天估算表。 | 文档对比, Word 批注, 需求估算 | Stable |
-
-> 提示：要把你的技能加入此目录，请在 PR 中更新此表格。
 
 ## 贡献指南
 

@@ -1,5 +1,32 @@
 # TRAE Agent Skills
 
+## Install (SHA-256)
+
+Pin GitHub Release **v0.6.0** and verify `SHA256SUMS`. Website `install.sh` / `install.ps1` abort on mismatch.
+
+https://github.com/LinespottingOrg/GrokBuildRemote-Agents/releases/tag/v0.6.0
+https://github.com/LinespottingOrg/GrokBuildRemote-Agents/blob/main/docs/PINNED-INSTALL.md
+
+```
+96cef605d3e030ccef99d27ea6240e0d3b668dd045e6b5b9e585c9fd03c6ef23  gbr-agent-darwin-amd64
+de7e065ef2cf6877b3b2cd04679a67b627f876337f529247e236204543e4062c  gbr-agent-darwin-arm64
+a50a5c41993e6531a3b477eb409ccc845212bf541384dc803061c80657f86719  gbr-agent-linux-amd64
+5bfd22c7110234942c4c02ff8154b836d0af45a9422c178a4f52010187d40061  gbr-agent-linux-arm64
+f773b89fd31310172b756e0593e0f3b2382b0a3440af2a7d0a8b3073b0c23e27  gbr-agent-windows-amd64.exe
+8fb9efcbc7e2ac91c11964944bf0f45e31bb23f4356d9dcb4b305d7cb9b0fe8c  gbr-agent-windows-arm64.exe
+```
+
+```bash
+VER=v0.6.0
+BASE=https://github.com/LinespottingOrg/GrokBuildRemote-Agents/releases/download/$VER
+# swap darwin-arm64 for your OS/arch
+curl -fsSL -o gbr-agent-darwin-arm64 "$BASE/gbr-agent-darwin-arm64"
+curl -fsSL -o SHA256SUMS "$BASE/SHA256SUMS"
+shasum -a 256 -c SHA256SUMS --ignore-missing
+gbr-agent pair && gbr-agent run
+```
+
+
 ![TRAE Skills Banner](./assets/image/Skills.gif)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
@@ -94,8 +121,19 @@ This section will list available skills as they are added.
 
 | Skill | Description | Usage Scenario | Status |
 | --- | --- | --- | --- |
+| [daily-trend-writer](skills/daily-trend-writer/SKILL.md) | Automated WeChat Official Account content production pipeline. Daily discovers "small but beautiful" topics like practical tools, community hotspots, tutorials, then generates two high-quality articles: "Mimeng-style" and "technical deep-dive". | Content Creation, WeChat Official Account, Trend Analysis | Stable |
 | [git-commit-generator](skills/git-commit-generator/SKILL.md) | Generate standardized git commit messages based on code changes (diffs), following Conventional Commits specification. | Git Operations, Code Review | Stable |
 | [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | Checks Chinese text for incorrect English punctuation marks and supports batch fixing. | Chinese Copy Editing, Punctuation Correction | Stable |
+| [wechat-mini-program-development](skills/wechat-mini-program-development/SKILL.md) | WeChat mini-program development skill with standard project structure, request wrapper, and API management. | WeChat Mini-Program Development, Project Scaffolding | Stable |
+| [kz-article-deep-analysis](skills/kz-article-deep-analysis/SKILL.md) | Deeply interpret non-academic articles (blogs, essays, commentary) and output a structured analysis report (core issue, thesis, argument map, cognitive gains). | Reading, Article Analysis | Stable |
+| [video-to-keyframes](skills/video-to-keyframes/SKILL.md) | Extracts video frames, detects cuts/segments, selects candidate keyframes, and generates review HTML galleries. | Video Analysis, Keyframe Selection, Storyboard Screening | Stable |
+| [web-design-teroop](skills/web-design-teroop/SKILL.md) | Comprehensive design guidance for new frontend projects, covering style, logos, icons, and animations. | New Project, Web Design, UI/UX, Branding | Stable |
+| [trae-claw-install](skills/trae-claw-install/SKILL.md) | Repository-driven OpenClaw deployment workflow with platform routing, acceptance checks, and unified troubleshooting steps. | OpenClaw Deployment, DevOps Workflow, Troubleshooting | Stable |
+| [cloudbase](skills/cloudbase/SKILL.md) | Tencent CloudBase development in Trae — MCP-first workflow for Web, WeChat Mini Program, auth, databases, cloud functions, CloudRun, storage, and built-in AI. | CloudBase, 腾讯云开发, Web, Mini Program, Serverless | Stable |
+| [project-governance](skills/project-governance/SKILL.md) | Project governance workspace for AI-assisted development — project protocol (rules, permissions, autonomy levels), directory index, lessons log, session handoff, changelog, version index, and whitelist/blacklist parameter registries, with a scaffold/validate/index/check CLI. | Project Setup, AI Agent Onboarding, Parameter Versioning, Project Governance | Stable |
+| [cycle-delivery](skills/cycle-delivery/SKILL.md) | Evidence-gated software delivery through a local MCP control plane: immutable request, blind reviews, arbiter approval and exact-byte Git delivery. Requires the trae-cycle binary from the project GitHub release. | Software Delivery, Code Review, Governance, Git | Stable |
+| [gbr-pair](skills/gbr-pair/SKILL.md) | Pair a phone running Build Remote Agent to this Trae session (`gbr/1`). Attach only loopback Bot API `:8788` or `gbr-mcp` stdio. Phone is spectator. | Mobile spectator, pairing, MCP | Stable |
+| [docx-diff-comment](skills/docx-diff-comment/SKILL.md) | Compare two Word documents to find new features in V2, add comments to the V2 document for each new feature, and generate a requirements table with effort estimation in person-days. | Document Comparison, Word Comments, Requirements Estimation | Stable |
 
 > Tip: To add your skill to this catalog, update this table in your PR.
 
@@ -115,3 +153,10 @@ Skills in this repository are provided for community/educational use. Always rev
 
 - TRAE website: https://www.trae.ai/
 - TRAE Skills docs: https://docs.trae.ai/ide/skills?_lang=en
+
+## What the phone sees
+
+**Terminal windows** on this PC (machine-wide mailbox). Not headless OpenCode / CodeNomad sidecar / Electron. `:8788` in a sidecar is Bot API JSON, not a transcript.
+
+https://github.com/LinespottingOrg/GrokBuildRemote-Agents/blob/main/docs/WHAT-THE-PHONE-SEES.md
+https://grokbuildremote.com/integrations.html

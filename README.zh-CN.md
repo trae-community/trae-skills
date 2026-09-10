@@ -95,8 +95,18 @@ description: 简要描述这个技能的功能和使用场景
 
 | 技能 | 描述 | 使用场景 | 状态 |
 | --- | --- | --- | --- |
+| [daily-trend-writer](skills/daily-trend-writer/SKILL.md) | 全自动化的公众号内容生产流水线。每日发现实用工具、社区热点、教程经验等"小而美"选题，深挖后输出"咪蒙风格"与"技术干货"两篇高质量公众号文章。 | 内容创作, 公众号运营, 热点分析 | Stable |
 | [git-commit-generator](skills/git-commit-generator/SKILL.md) | 根据代码变更（diffs）生成标准化、符合 Conventional Commits 规范的 git 提交信息。 | Git 操作, 代码评审 | Stable |
 | [cn-punctuation-checker](skills/cn-punctuation-checker/SKILL.md) | 检查中文文案中错误使用的英文标点符号，并支持批量修复。 | 中文文案润色, 标点纠错 | Stable |
+| [wechat-mini-program-development](skills/wechat-mini-program-development/SKILL.md) | 微信小程序开发专用技能，提供标准项目结构、请求封装和 API 管理。 | 微信小程序开发, 项目脚手架 | Stable |
+| [kz-article-deep-analysis](skills/kz-article-deep-analysis/SKILL.md) | 深度解读非学术类文章（博客、随笔、评论），输出结构化分析报告（核心议题、核心主张、论证拓扑、认知增量）。 | 深度阅读, 文章分析 | Stable |
+| [video-to-keyframes](skills/video-to-keyframes/SKILL.md) | 抽取视频帧、检测转场与分段、筛选候选关键帧，并生成可复筛的 HTML 画廊。 | 视频分析, 关键帧筛选, 分镜初筛 | Stable |
+| [web-design-teroop](skills/web-design-teroop/SKILL.md) | 为新前端项目提供全面的设计指导，涵盖风格、Logo、图标和动画设计。 | 新项目, Web 设计, UI/UX, 品牌设计 | Stable |
+| [entropy-box-zh](skills/entropy-box-zh/SKILL.md) | 以箱熵（Entropy Box）具身智能全景图与知识编译器为核心，把边界明确的具身智能技术需求转化为候选实现方法与有依据的工程工作流；支持全景定位、能力依赖分析、资产选型与证据核验。 | 具身智能研发, 技术全景分析, 能力分解, 依赖分析, 资产选型, 知识缺口分析 | Stable |
+| [cloudbase](skills/cloudbase/SKILL.md) | 在 Trae 中进行腾讯云开发（CloudBase）开发：优先 MCP 工具，覆盖 Web / 微信小程序、登录鉴权、数据库、云函数、云托管、云存储与内置 AI。 | 云开发, CloudBase, Web, 小程序, Serverless | Stable |
+| [project-governance](skills/project-governance/SKILL.md) | AI 辅助开发的项目治理工作区——项目协议（规则、权限、自主权等级）、目录索引、错误档案、会话交接、变更日志、稳定版本索引，以及 whitelist/blacklist 参数注册表，附带 scaffold/validate/index/check CLI。 | 项目搭建, AI Agent 接入, 参数版本管理, 项目治理 | Stable |
+| [cycle-delivery](skills/cycle-delivery/SKILL.md) | 通过本地 MCP 控制平面进行证据门禁式软件交付：不可变请求、双盲评审、仲裁批准与字节级 Git 交付。需从项目 GitHub Release 安装 trae-cycle 二进制。 | 软件交付, 代码评审, 流程治理, Git | Stable |
+| [docx-diff-comment](skills/docx-diff-comment/SKILL.md) | 对比两份 Word 文档差异，在新版本中对新增功能点添加批注，并生成新增需求人天估算表。 | 文档对比, Word 批注, 需求估算 | Stable |
 
 > 提示：要把你的技能加入此目录，请在 PR 中更新此表格。
 

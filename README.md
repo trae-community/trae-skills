@@ -77,6 +77,7 @@ To create a skill, start with the [skill template](skills/_template/SKILL.md) an
 | [cycle-delivery](skills/cycle-delivery/SKILL.md) | Evidence-gated software delivery through a local MCP control plane: immutable request, blind reviews, arbiter approval and exact-byte Git delivery. Requires the trae-cycle binary from the project GitHub release. | Software Delivery, Code Review, Governance, Git | Stable |
 | [gbr-pair](skills/gbr-pair/SKILL.md) | Pair a phone running Build Remote Agent to this Trae session (`gbr/1`). Attach only loopback Bot API `:8788` or `gbr-mcp` stdio. Phone is spectator. | Mobile spectator, pairing, MCP | Stable |
 | [docx-diff-comment](skills/docx-diff-comment/SKILL.md) | Compare two Word documents to find new features in V2, add comments to the V2 document for each new feature, and generate a requirements table with effort estimation in person-days. | Document Comparison, Word Comments, Requirements Estimation | Stable |
+| [hyperliquid-cli](skills/hyperliquid-cli/SKILL.md) | Agent guide for trading spot and perpetuals on Hyperliquid via hyperliquid CLI: discover markets, query state, dry-run mutations, place bracket/trailing orders, transfer assets, and manage vaults. | Crypto Trading, Hyperliquid, DEX, Quantitative Finance, Autonomous Trading | Stable |
 
 ## Contributing
 

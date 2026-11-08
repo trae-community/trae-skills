@@ -76,6 +76,7 @@ skills/
 | [project-governance](skills/project-governance/SKILL.md) | AI 辅助开发的项目治理工作区——项目协议（规则、权限、自主权等级）、目录索引、错误档案、会话交接、变更日志、稳定版本索引，以及 whitelist/blacklist 参数注册表，附带 scaffold/validate/index/check CLI。 | 项目搭建, AI Agent 接入, 参数版本管理, 项目治理 | Stable |
 | [cycle-delivery](skills/cycle-delivery/SKILL.md) | 通过本地 MCP 控制平面进行证据门禁式软件交付：不可变请求、双盲评审、仲裁批准与字节级 Git 交付。需从项目 GitHub Release 安装 trae-cycle 二进制。 | 软件交付, 代码评审, 流程治理, Git | Stable |
 | [docx-diff-comment](skills/docx-diff-comment/SKILL.md) | 对比两份 Word 文档差异，在新版本中对新增功能点添加批注，并生成新增需求人天估算表。 | 文档对比, Word 批注, 需求估算 | Stable |
+| [hyperliquid-cli](skills/hyperliquid-cli/SKILL.md) | 在 Hyperliquid 链上进行现货与永续合约量化交易的 Agent 指南：市场发现、状态查询、dry-run 预演、条件单/追踪止损、资产划转与金库管理。 | 加密货币交易, Hyperliquid, DEX, 量化交易, 自动化交易 | Stable |
 
 ## 贡献指南
 
